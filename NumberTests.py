@@ -7,11 +7,56 @@ def isThreeOrFive(n):
     return True
   else:
     return False
+  
+def getFactors(num):
+  """Returns a list of all factors of a given integer"""
+  factors = []
+  for f in range(1, num//2 +1):
+    if num % f == 0:
+      factors.append(f)
+  return factors
 
 def isPrime(p):
   """Returns boolean (True/False) if the value given is prime."""
+  # if p == 2 :
+  #   return True
+  # if isEven(p):
+  #   return False
+  
+  # # for div in range(3, p // 2, 2) :
+  # for div in range(3, int(p**0.5) + 1, 2):
+  #   if p % div == 0:
+  #     return True
+  # return True
+  if p < 2:
+    return False
+  if p == 2:
+    return True
+  if p % 2 == 0:
+    return False  
 
+  for div in range(3, int(p**0.5) + 1, 2):  
+    if p % div == 0:
+      return False
   return True
+
+def isPrimeSum(n):
+  """Returns the sum of all prime numbers below n"""
+  total = 0
+  for i in range(2, n):
+    if isPrime(i): 
+      total += i
+  return total
+
+def nthPrime(n):
+    """Returns the nth prime number."""
+    count = 0  # Number of primes found
+    num = 1    # Number being checked
+    while count < n:
+      num += 1
+      if isPrime(num):  # Using isPrime from NumberTests.py
+          count += 1
+    return num
 
 def isEven(n):
   """Returns boolean about given value being even."""

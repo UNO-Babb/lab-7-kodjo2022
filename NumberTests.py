@@ -18,16 +18,7 @@ def getFactors(num):
 
 def isPrime(p):
   """Returns boolean (True/False) if the value given is prime."""
-  # if p == 2 :
-  #   return True
-  # if isEven(p):
-  #   return False
   
-  # # for div in range(3, p // 2, 2) :
-  # for div in range(3, int(p**0.5) + 1, 2):
-  #   if p % div == 0:
-  #     return True
-  # return True
   if p < 2:
     return False
   if p == 2:
@@ -50,11 +41,11 @@ def isPrimeSum(n):
 
 def nthPrime(n):
     """Returns the nth prime number."""
-    count = 0  # Number of primes found
-    num = 1    # Number being checked
+    count = 0  
+    num = 1    
     while count < n:
       num += 1
-      if isPrime(num):  # Using isPrime from NumberTests.py
+      if isPrime(num):  
           count += 1
     return num
 
